@@ -14,8 +14,8 @@ default['jboss']['mode'] = 'standalone'
 default['jboss']['service'] = 'jboss'
 
 # => Set Wildfly User & Group
-default['wildfly']['user'] = 'wildfly'
-default['wildfly']['group'] = 'wildfly'
+default['jboss']['user'] = 'wildfly'
+default['jboss']['group'] = 'wildfly'
 
 # => Interface Configuration
 # => Should probably put a proxy in front of these... Maybe NginX?
