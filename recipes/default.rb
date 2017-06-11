@@ -7,6 +7,6 @@
 
 # => Update System
 include_recipe 'apt' if platform?('ubuntu')
-include_recipe 'java' if node['jboss']['install_java']
+include_recipe 'java'
 include_recipe 'jboss::install'
 
