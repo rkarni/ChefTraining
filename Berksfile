@@ -4,5 +4,5 @@ metadata
 
 group :integration do
   cookbook 'apt'
-  cookbook 'java', path: 'D:\ChefTask\Day2\java'
+  cookbook 'java', path: '/opt/java'
 end
