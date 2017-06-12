@@ -1,7 +1,8 @@
-
+# => Shorten Hashes
+jboss = node['jboss']
 
 # => Download Wildfly Tarball
-remote_file "#{Chef::Config[:file_cache_path]}/#{jboss['version']}.tar.gz" do
+remote_file "#{Chef::Config[:file_cache_path]}/wildfly-10.1.0.Final.tar.gz" do
   source jboss['url']
   checksum jboss['checksum']
   action :create
@@ -12,7 +13,7 @@ end
 bash 'Extract jboss' do
   cwd Chef::Config[:file_cache_path]
   code <<-EOF
-  tar xzf #{jboss['version']}.tar.gz -C #{jboss['base']} --strip 1
+  tar xzf wildfly-10.1.0.Final.tar.gz -C #{jboss['base']} --strip 1
   chown #{jboss['user']}:#{jboss['group']} -R #{jboss['base']}
   rm -f #{::File.join(jboss['base'], '.chef_deployed')}
   EOF
